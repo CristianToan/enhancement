@@ -322,11 +322,45 @@ header{
   background-color: var(--main-color);
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
+  position: relative;
+}
+.about-wrapper__caption .view-more:before, .courses-wrapper .view-more:before,
+.about-wrapper__caption .view-more:after, .courses-wrapper .view-more:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  opacity: 0;
+}
+.about-wrapper__caption .view-more:before, .courses-wrapper .view-more:before{
+  border-left: 2px solid var(--main-color);
+  border-right: 2px solid var(--main-color);
+  transform: scaleY(0);
+}
+.about-wrapper__caption .view-more:after, .courses-wrapper .view-more:after{
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  transform: scaleX(0);
 }
 .about-wrapper__caption .view-more:hover,
 .courses-wrapper .view-more:hover{
   background-color: var(--extra-color);
   color: var(--main-color)
+}
+.about-wrapper__caption .view-more:hover:before,
+.courses-wrapper .view-more:hover:before{
+  transform: scaleX(1);
+  opacity: 1;
+  z-index: 1;
+}
+.about-wrapper__caption .view-more:hover:after,
+.courses-wrapper .view-more:hover:after{
+  transform: scaleX(1);
+  opacity: 1;
 }
 /* ---partner-wrapper--- */
 .partner-wrapper{
