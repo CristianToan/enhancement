@@ -55,6 +55,14 @@ $('.testominal-slider').owlCarousel({
     dots:  true,
 	nav: true,
     navText: ['<img src="./images/left.png"></span>', '<img src="./images/right.png">'],
+	    responsive: {
+        0: {
+            nav:false
+        },
+        992: {
+            nav: true
+        }
+    }
 });
 
 $(window).scroll(function () {
@@ -98,52 +106,44 @@ window.addEventListener('scroll', () => {
 });
   
 
-// $('.main-blog').owlCarousel({
-//     items: 2,
-//     loop: true,
-//     margin: 30,
-//     autoplay: true,
-//     autoplayHoverPause: true,
-//     dots:  true,
-//     nav: false,
-//     responsive: {
-//         0: {
-//             items: 1,
-//             margin: 0
-//         },
-//         992: {
-//             items: 2,
-//         }
-//     }
-// });
+$('.main-partner').owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 15,
+    autoplay: true,
+    autoplayHoverPause: true,
+    dots:  false,
+    nav: false,
+	stagePadding: 50,
+});
 
 
-// $(function() {
-//     $('nav#menu').mmenu({
-//         extensions  : [ 'effect-slide-menu', 'pageshadow' ],
-//         searchfield : true,
-//         counters    : false,
-//         navbar      : {
-//             title   : name_company
-//         },
-//         offCanvas   : {
-//             position: "right"
-//         },
-//         navbars     : [
-//         {
-//             position    : 'top',
-//             content     : [ 'searchfield' ]
-//         }, {
-//             position    : 'top',
-//             content     : [
-//             'prev',
-//             'title',
-//             'close'
-//             ]
-//         }
-//         ]
-//     }); 
-// });
+$(function() {
+    $('nav#menu').mmenu({
+        extensions  : [ 'effect-slide-menu', 'pageshadow' ],
+        searchfield : true,
+        counters    : false,
+        navbar      : {
+            title   : name_company
+        },
+        offCanvas   : {
+            position: "right"
+        },
+        navbars     : [
+        {
+            position    : 'top',
+            content     : [ 'searchfield' ]
+        }, {
+            position    : 'top',
+            content     : [
+            'prev',
+            'title',
+            'close'
+            ]
+        }
+        ]
+    }); 
+});
 
 // productSlider = jQuery(".product_slider").lightSlider({
 //     gallery             : true,

@@ -39,7 +39,7 @@ button:focus {
 }
 .block-content h3{
   font-size: 46px;
-  font-weight: 700px;
+  font-weight: 700px !important;
   color: var(--main-color);
   margin-bottom: 25px;
 }
@@ -47,6 +47,17 @@ button:focus {
 /* ---header--- */
 header{
   padding: 16px 0
+}
+.header-sm {
+  background-color: #fff;
+  padding: 2px 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+.header-sm .logo a img {
+  height: 40px;
 }
 /* ---menu--- */
 .navigation,
@@ -222,7 +233,6 @@ header{
 .main-slider .item{
   background: var(--bg-item) no-repeat center center;
   background-size: cover;
-  height: calc(100vh - 186px);
   border-bottom-left-radius: 64px;
   border-bottom-right-radius: 64px;
   overflow: hidden;
@@ -250,7 +260,8 @@ header{
 .slider-wrapper__caption p{
     font-size: 18px;
     color: #fff;
-    margin: 30px 0
+    margin: 30px 0;
+    padding: 0 15px;
 }
 .slider-wrapper__caption a{
   background-color: var(--main-color);
@@ -615,14 +626,13 @@ header{
 }
 
 .box-faq__group .question{
-  border-bottom: 1px solid var(--main-color);
-  padding-bottom: 15px;
-}
-.box-faq__group .question h4{
   margin-bottom: 0;
   font-size: 16px;
   font-weight: 400;
   color: #454545;
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 .box-faq__group .question span{
   width: 20px;
@@ -663,13 +673,12 @@ header{
 .box-faq__group.open{
   background-color: var(--main-color);
 }
-.box-faq__group .question{
-  cursor: pointer;;
-}
-.box-faq__group.open .question h4{
+
+.box-faq__group.open .question{
   border: none;
   color: var(--extra-color);
   font-weight: 700;
+  cursor: pointer;
 }
 .box-faq__group.open .answer{
   height: auto;
@@ -754,7 +763,13 @@ header{
   padding-bottom: 5px;
 }
 .blog-box__caption .preview{
-  margin: 10px 0 15px
+  margin: 10px 0 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+
 }
 .blog-box__caption .view-more{
   color: var(--main-color);
@@ -830,4 +845,7 @@ footer{
   font-size: 12px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
+}
+.main-partner .owl-stage{
+  right: 47px;
 }
