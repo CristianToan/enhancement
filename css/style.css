@@ -172,7 +172,7 @@ header{
 }
 
 .navigation ul ul > li:hover > ul {
-  left: 205px;
+  left: 195px;
   top: 0;
   opacity: 1;
 }
