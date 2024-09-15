@@ -138,6 +138,15 @@ $('.main-team').owlCarousel({
     autoplayHoverPause: true,
     dots:  true,
     nav: false,
+    responsive: {
+        0: {
+            items: 1,
+            margin: 0,
+        },
+        768: {
+            items: 2,
+        }
+    }
 });
 
 
@@ -167,6 +176,60 @@ $(function() {
         ]
     }); 
 });
+
+$('.pricing-table__package li a').click(function(e){
+    e.preventDefault()
+    let parent_block = $(this).closest('.pricing-wrap')
+    let parent_li = $(this).closest('li')
+    parent_block.find('li.active').removeClass('active');
+    parent_li.addClass('active')
+    let id_package = $(this).attr('href')
+    parent_block.find('.pricing-table__box').css('display', 'none')
+    $(id_package).css('display', 'block')
+})
+
+var scrollingElements = document.querySelectorAll('.problem-inner');
+var startX;
+
+scrollingElements.forEach(function (scrollingElement) {
+    scrollingElement.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].pageX;
+    });
+
+    scrollingElement.addEventListener('touchmove', function (e) {
+      var deltaX = startX - e.touches[0].pageX;
+      scrollingElement.scrollLeft += deltaX;
+      startX = e.touches[0].pageX;
+      e.preventDefault(); 
+    });
+
+    scrollingElement.addEventListener('mousedown', function (e) {
+        startX = e.pageX;
+    });
+
+    scrollingElement.addEventListener('mousemove', function (e) {
+        if (e.buttons === 1) {
+            var deltaX = startX - e.pageX;
+            scrollingElement.scrollLeft += deltaX;
+            startX = e.pageX;
+            e.preventDefault();
+        }
+    });
+
+        scrollingElement.addEventListener('mouseup', function () {
+        startX = 0;
+    });
+});
+
+
+if (window.innerWidth >= 992) {
+    const teamImage = document.querySelector('.team-box .team-img img');
+
+    if (teamImage) {
+        const height = teamImage.clientHeight - 50;
+        $('.team-info__auto').css('max-height', height);
+    }
+}
 
 // productSlider = jQuery(".product_slider").lightSlider({
 //     gallery             : true,
