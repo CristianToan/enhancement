@@ -1,3 +1,40 @@
+@media screen and (min-width: 1800px){
+    .box-core__caption:after{
+        border-left: 270px solid transparent !important;
+        border-right: 270px solid transparent !important;
+    }
+}
+@media screen and (min-width: 1600px){
+    .into-page__description,
+    .slider-wrapper__caption p,
+    .team-wrapper__title .description,
+    .overview-area h5{
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .overview-area__list li{
+        font-size: 25px;
+    }
+    .about-wrapper__caption .view-more, .courses-wrapper .view-more, .intro-page__view{
+        font-size: 22px;
+    }
+    .box-core__caption:after{
+        border-left: 235px solid transparent;
+        border-right: 235px solid transparent;
+    }
+    .navigation > ul > li > a{
+        font-size: 25px;
+    }
+    .intro-box{
+        height: 800px;
+    }
+}
+@media screen and (max-width: 1440px){
+    .intro-page__video a.thumb-video{
+        width: 90%;
+        margin-left: auto;
+    }
+}
 @media screen and (max-width: 1200px){
     .navigation > ul > li > a{
         font-size: 16px;
@@ -8,9 +45,44 @@
     .block-content h3{
         font-size: 40px;
     }
+    .box-core__icon img{
+        width: 120px;
+        height: 120px;
+    }
+    .box-core__caption:after{
+        border-left: 152px solid transparent;
+        border-right: 152px solid transparent;
+    }
+    .team-info h4{
+        font-size: 25px;
+    }
+    .team-info > p,
+    .team-info .preview,
+    .box-why__caption .preview{
+        font-size: 16px;
+    }
+    .intro-page h1{
+        font-size: 48px;
+    }
+}
+@media screen and (max-width: 1150px){
+    .box-core__caption:after{
+        border-left: 135px solid transparent;
+        border-right: 135px solid transparent;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1024px){
+    .box-core__caption:after {
+        border-left: 120px solid transparent;
+        border-right: 120px solid transparent;
+    }
 }
 @media screen and (min-width: 992px){
-    .main-slider .item{
+    .container{
+        max-width: calc(100% - 180px);
+    }
+    .main-slider .item,
+    .intro-box{
         height: calc(100vh - 186px);
     }
     .main-slider .item > img{
@@ -65,7 +137,28 @@
     #main-content{
         margin-top: 44px;
     }
+    .intro-box{
+        min-height: 400px;
+    }
+    .box-core__icon img{
+        width: 90px;
+        height: 90px;
+    }
+    .box-core__icon{
+        top: -65px
+    }
+    .box-core__caption{
+        padding: 65px 10px 40px 10px;
+    }
+    .box-core__caption .content{
+        font-size: 14px;
+    }
+    .box-core__caption:after {
+        border-left: 103px solid transparent;
+        border-right: 103px solid transparent;
+    }
 }
+
 @media screen and (max-width: 767px){
     #wrapper{
         overflow-x: hidden;
@@ -102,7 +195,9 @@
         margin-bottom: 40px;
     }
     .main-slider .item,
-    .slider-wrapper{
+    .slider-wrapper,
+    .intro-box,
+    .intro-page{
         border-bottom-left-radius: 32px;
         border-bottom-right-radius: 32px;
     }
@@ -122,5 +217,43 @@
     }
     .box-chart__statics .title span + span{
         width: 60%;
+    }
+    .intro-box{
+        padding: 30px 0;
+    }
+    .intro-page__video a.thumb-video{
+        width: 100%;
+    }
+    .intro-page__view{
+        display: block;
+        text-align: center;
+    }
+    .box-core__caption{
+        margin-bottom: 40px;
+    }
+    .box-core__caption:after {
+        border-left: 156px solid transparent;
+        border-right: 156px solid transparent;
+    }
+    .main-overview .owl-dots .owl-dot span,
+    .main-team .owl-dots .owl-dot span{
+        background-color: var(--main-color) !important;
+        opacity: 0.8 !important;
+    }
+    .main-overview  .owl-dots .owl-dot.active span, .main-overview  .owl-dots .owl-dot:hover span,
+    .main-team  .owl-dots .owl-dot.active span, .main-team  .owl-dots .owl-dot:hover span{
+        opacity: 1 !important;
+    }
+    .main-team{
+        padding-top: 40px;
+    }
+    .main-team .owl-nav.disabled+.owl-dots{
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-main{
+        text-align: center;
     }
 }

@@ -66,36 +66,39 @@ $('.testominal-slider').owlCarousel({
 });
 
 $(window).scroll(function () {
-	
-	var statisticNumberPosition = $(".statics-wrapper").offset().top;
-  
-	var windowHeight = $(window).height();
-  
-	if (statisticNumberPosition < windowHeight + $(window).scrollTop()) {
-	  $(".counter").each(function () {
-		var $this = $(this),
-		  countTo = $this.attr("data-countto");
-		countDuration = parseInt($this.attr("data-duration"));
-		$({ counter: $this.text() }).animate(
-		  {
-			counter: countTo
-		  },
-		  {
-			duration: countDuration,
-			easing: "linear",
-			step: function () {
-			  $this.text(Math.floor(this.counter));
-			},
-			complete: function () {
-			  $this.text(this.counter);
-			}
-		  }
-		);
-	  });
-	  
-  
-	  $(window).off("scroll");
-	}
+    // Kiểm tra xem lớp 'statics-wrapper' có tồn tại không
+    if ($(".statics-wrapper").length) {
+        var statisticNumberPosition = $(".statics-wrapper").offset().top;
+        var windowHeight = $(window).height();
+
+        if (statisticNumberPosition < windowHeight + $(window).scrollTop()) {
+            $(".counter").each(function () {
+                var $this = $(this),
+                    countTo = $this.attr("data-countto");
+                var countDuration = parseInt($this.attr("data-duration"));
+                
+                // Thực hiện hoạt ảnh đếm
+                $({ counter: $this.text() }).animate(
+                    {
+                        counter: countTo
+                    },
+                    {
+                        duration: countDuration,
+                        easing: "linear",
+                        step: function () {
+                            $this.text(Math.floor(this.counter));
+                        },
+                        complete: function () {
+                            $this.text(this.counter);
+                        }
+                    }
+                );
+            });
+
+            // Tắt sự kiện cuộn
+            $(window).off("scroll");
+        }
+    }
 });
 window.addEventListener('scroll', () => {
     document.querySelectorAll('.progress-bar').forEach(progressBar => {
@@ -115,6 +118,26 @@ $('.main-partner').owlCarousel({
     dots:  false,
     nav: false,
 	stagePadding: 50,
+});
+
+$('.main-overview').owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 15,
+    autoplay: true,
+    autoplayHoverPause: true,
+    dots:  true,
+    nav: false,
+	stagePadding: 25,
+});
+$('.main-team').owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 15,
+    autoplay: true,
+    autoplayHoverPause: true,
+    dots:  true,
+    nav: false,
 });
 
 
