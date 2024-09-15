@@ -124,7 +124,7 @@ $('.main-overview').owlCarousel({
     items: 1,
     loop: true,
     margin: 15,
-    autoplay: true,
+    autoplay: false,
     autoplayHoverPause: true,
     dots:  true,
     nav: false,

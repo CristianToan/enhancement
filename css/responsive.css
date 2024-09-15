@@ -262,3 +262,15 @@
         text-align: center;
     }
 }
+@media screen and (max-width: 375px){
+    .box-core__caption:after {
+        border-left: 142px solid transparent;
+        border-right: 142px solid transparent;
+    }
+}
+@media screen and (max-width: 360px){
+    .box-core__caption:after {
+        border-left: 135px solid transparent;
+        border-right: 135px solid transparent;
+    }
+}
