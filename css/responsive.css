@@ -34,6 +34,10 @@
         width: 90%;
         margin-left: auto;
     }
+    .box-core__caption:after{
+        border-left: 192px solid transparent;
+        border-right: 192px solid transparent;
+    }
 }
 @media screen and (max-width: 1200px){
     .navigation > ul > li > a{
